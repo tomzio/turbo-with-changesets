@@ -6,5 +6,8 @@
   "linked": [],
   "access": "public",
   "updateInternalDependencies": "patch",
+  "snapshot": {
+    "useCalculatedVersion": true
+  },
   "ignore": ["@acme/docs"]
 }

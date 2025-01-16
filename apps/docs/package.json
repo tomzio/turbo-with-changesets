@@ -10,7 +10,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next"
   },
   "dependencies": {
-    "@acme/core": "workspace:*",
+    "@acme/ui": "workspace:*",
     "@acme/utils": "workspace:*",
     "next": "^14.1.1",
     "react": "^18.2.0",
