@@ -25,14 +25,13 @@ jobs:
         with:
           version: 8
 
-      - name: Install my-slack-bot
-        run: npm install -g my-slack-bot
 
       - name: Creating .npmrc
         run: |
           cat << EOF > "$HOME/.npmrc"
             //npm.tomz.cc/:_authToken=$NPM_TOKEN
           EOF
+          npm config set registry http://npm.tomz.cc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -41,6 +40,9 @@ jobs:
 
       - name: Debug env
         run: echo "NPM_TOKEN=${secrets.NPM_TOKEN}"
+
+      - name: Install my-slack-bot
+        run: npm install -g my-slack-bot
 
       - name: Install Dependencies
         run: pnpm i
