@@ -39,7 +39,9 @@ jobs:
         run: cat ~/.npmrc
 
       - name: Debug env
-        run: echo "NPM_TOKEN=${secrets.NPM_TOKEN}"
+        run: echo "NPM_TOKEN=$NPM_TOKEN"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install my-slack-bot
         run: npm install -g my-slack-bot
