@@ -29,9 +29,10 @@ jobs:
       - name: Creating .npmrc
         run: |
           cat << EOF > "$HOME/.npmrc"
+            registry=https://registry.npmmirror.com/
+            @acme:registry=http://npm.tomz.cc
             //npm.tomz.cc/:_authToken=$NPM_TOKEN
           EOF
-          npm config set registry http://npm.tomz.cc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
