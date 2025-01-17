@@ -25,6 +25,10 @@ jobs:
         with:
           node-version: 20.x
 
+      - name: Authenticate with npm
+        run: |
+          echo "//npm.tomz.cc/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
       - name: Install Dependencies
         run: pnpm i
 
