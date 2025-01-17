@@ -45,8 +45,6 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Install my-slack-bot
-        run: npm install -g my-slack-bot
 
       - name: Install Dependencies
         run: pnpm i
