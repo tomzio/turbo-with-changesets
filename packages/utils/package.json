@@ -2,31 +2,41 @@
   "name": "@acme/utils",
   "version": "0.0.2",
   "author": "tomzio <tomzio@qq.com>",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./**/*": {
+      "types": "./dist/**/*.d.ts",
+      "import": "./dist/**/*.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "type": "module",
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "sideEffects": false,
-  "license": "MIT",
   "files": [
     "dist/**"
   ],
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
-    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "lint": "eslint \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
     "@acme/tsconfig": "workspace:*",
-    "@types/react": "^18.2.61",
-    "@types/react-dom": "^18.2.19",
-    "eslint": "^8.57.0",
-    "@acme/eslint-config": "workspace:*",
-    "tsup": "^8.0.2",
+    "@rslib/core": "^0.5.3",
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "tsup": "^8.4.0",
     "typescript": "5.5.4"
-  },
-  "dependencies": {
-    "react": "^18.2.0"
   },
   "publishConfig": {
     "access": "public",

@@ -3,8 +3,18 @@
   "extends": "./base.json",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "lib": ["dom", "ES2015"],
-    "module": "NodeNext",
-    "target": "es6"
+    "lib": ["dom", "ES2020"],
+    "target": "ESNext",
+
+    "useDefineForClassFields": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "module": "ESNext",
+    "resolveJsonModule": true,
+
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "moduleResolution": "bundler",
+    "strict": true,
   }
 }
